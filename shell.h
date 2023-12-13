@@ -16,6 +16,10 @@ extern char **envi;
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <stddef.h>
+#include <ctype.h>
+#include <stdbool.h>
+
 
 /**
  * struct list_s - singly linked list
