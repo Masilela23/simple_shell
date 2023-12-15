@@ -70,3 +70,43 @@ char *_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+
+int _getchar(void)
+{
+	char buffer[BUFFERSIZE];
+	char *buff = buffer;
+	int index = 0;
+
+	if (index == 0)
+	{
+		index = read(0, buffer, 1);
+	}
+	if (index-- >= 0)
+	{
+		return (*buff++);
+	}
+	return (EOF);
+}
+/**
+ * word_counter - Counts words
+ *
+ * @str: char pointer
+ *
+ * Return: Integer
+ */
+
+
+int word_counter(char *str)
+{
+	int count1, count2 = 0;
+
+	for (count1 = 0; str[count1] != '\0'; count1++)
+	{
+		if (str[count1] != ' ' && (str[count1 + 1] == ' ' ||
+					   str[count1 + 1] == '\0'))
+		{
+			count2++;
+		}
+	}
+	return (count1);
+}

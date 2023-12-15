@@ -4,7 +4,7 @@
 #define BUFFERSIZE 1024
 #define DELIMINATOR "\n\r\t\a "
 
-extern char **envi;
+extern char **environ;
 
 #include <errno.h>
 #include <fcntl.h>
@@ -82,11 +82,11 @@ int _atoi(char *str);
 char *_strdup(const char *str);
 int _strcmp(char *str1, char *str2);
 int exec_cmd(char **str, char **env);
-char *read_line(void);
+char *read_shell(void);
 char *_strcat(char *s1, char *s2);
 void ctrl_c_handler(int sig_num);
-char **parse_line(char *line);
-int function_filter(char **commands, char **env);
+char **shell_line(char *line);
+int shell_filter(char **commands, char **env);
 int WhoAmI(void);
 
 
