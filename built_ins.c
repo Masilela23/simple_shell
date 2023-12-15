@@ -40,7 +40,8 @@ int call_exit_status(char **args)
 int call_cd(char **args)
 {
 	char *target_dir = NULL, *home = NULL;
-	home = _getenv(envi, "HOME");
+
+	home = _getenv(environ, "HOME");
 
 	if (args[1])
 	{
@@ -51,7 +52,7 @@ int call_cd(char **args)
 		}
 		/* target_dir to the value of the OLDPWD environment variable.*/
 		else if (_strcmp(args[1], "-"))
-			target_dir = _getenv(envi, "OLDPWD");
+			target_dir = _getenv(environ, "OLDPWD");
 		else
 			target_dir = args[1];
 	}
