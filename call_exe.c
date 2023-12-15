@@ -1,10 +1,14 @@
 #include "shell.h"
+#include <unistd.h>
+#include <stddef.h>
 
 /**
- * exec_cmd – this function takes in a command to execute.
- * @env: this is the environment
- * @str: vectorized array of user input
- *Return: 1 if success or 0 fail
+ * exec_cmd - Executes a command.
+ * @str: Vectorized array of user input representing
+ * the command and its arguments.
+ * @env: The environment variables.
+ *
+ * Return: 1 if successful, 0 on failure.
  */
 int exec_cmd(char **str, char **env)
 {
@@ -49,14 +53,16 @@ int exec_cmd(char **str, char **env)
 }
 
 /**
- * input_check – this function saves space.
- * @str: this is a double pointer char
- * @env: its an environmental variable
- * @newstr: char pointer
- * @path: char pointer
- * @mas: char pointer
- * Return: Integer
+ * input_check - This function checks and prepares input parameters.
+ * @str: Double pointer to char, representing user input.
+ * @env: Environmental variables.
+ * @newstr: Char pointer for dynamic memory allocation.
+ * @path: Char pointer for path manipulation.
+ * @mas: Char pointer for environmental variable manipulation.
+ *
+ * Return: Integer indicating success (0) or failure (1).
  */
+
 int input_check(char **str, char **env, char *newstr, char *path, char *mas)
 {
 	if ((check_input(str, env)) == 1)
@@ -70,12 +76,15 @@ int input_check(char **str, char **env, char *newstr, char *path, char *mas)
 	}
 	return (0);
 }
+
 /**
- * _getenv – this function finds the environment variable
- * @env: this is the environment
- * @str: the pointer to find
- * Return: 1 id success or 0 if it fails
+ * _getenv - Find the value of an environment variable.
+ * @env: The environment variables.
+ * @str: The pointer to the variable to find.
+ *
+ * Return: 1 on success, 0 on failure.
  */
+
 char *_getenv(char **env, char *str)
 {
 	char *args = NULL, *copy = malloc(sizeof(char *) * BUFFERSIZE);
@@ -114,11 +123,13 @@ char *_getenv(char **env, char *str)
 }
 
 /**
- * find_env_var – this function finds the environment variable
- * @env: this is the environment
- * @str: the pointer to find
- * Return: The index
+ * find_env_var - Find the index of an environment variable.
+ * @env: The environment variables.
+ * @str: The pointer to the variable to find.
+ *
+ * Return: The index of the variable, or -1 if not found.
  */
+
 int find_env_var(char **env, char *str)
 {
 	char *args = NULL;
@@ -142,11 +153,13 @@ int find_env_var(char **env, char *str)
 }
 
 /**
- * check_input – this function checks if the input is already a path
- * @env: this is the environment
- * @str: this is the vectorized array of input
- * Return: 1 if success or 0 if it fails
+ * check_input - Check if the input is already a path.
+ * @env: The environment variables.
+ * @str: The vectorized array of input.
+ *
+ * Return: 1 on success, 0 on failure.
  */
+
 int check_input(char **str, char **env)
 {
 	pid_t pid, wpid;
@@ -190,4 +203,3 @@ int check_input(char **str, char **env)
 	free(lusi);
 	return (0);
 }
-

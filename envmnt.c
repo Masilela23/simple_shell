@@ -1,10 +1,12 @@
 #include "shell.h"
 
 /**
- * call_env – this function built in function for environment
- * @env: this will double char pointer
- * Return: Int
+ * call_env - Built-in function to display the environment.
+ * @env: Double pointer to char representing the environment.
+ *
+ * Return: Integer.
  */
+
 int call_env(char **env)
 {
 	int s = 0;

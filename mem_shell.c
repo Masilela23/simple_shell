@@ -1,13 +1,12 @@
 #include "shell.h"
 
 /**
- * _realloc – this function reallocates space for a memory block
- * @ptr: Pointer passed in
+ * _realloc - Reallocates space for a memory block.
+ * @ptr: Pointer to the memory block to be reallocated.
+ * @old_size: Old size of the memory block.
+ * @new_size: New size of the memory block.
  *
- * @old_size: Old size of the array
- * @new_size: New size of the array
- *
- * Return: 0
+ * Return: Pointer to the reallocated memory block, or NULL on failure.
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)

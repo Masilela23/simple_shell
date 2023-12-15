@@ -1,9 +1,11 @@
 #include "shell.h"
+
 /**
- * call_unsetenv – this function unsets environments variables
- * @env: Environment variables
- * @str: User input
- * Return: Always 1
+ * call_unsetenv - Unset environment variables.
+ * @env: Environment variables.
+ * @str: User input.
+ *
+ * Return: Always 1.
  */
 
 int call_unsetenv(char **env, char **str)

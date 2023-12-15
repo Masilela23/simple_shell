@@ -71,6 +71,12 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * _getchar - Reads a character from standard input (stdin).
+ *
+ * Return: The character read as an unsigned char
+ * cast to an int or EOF on failure.
+ */
 int _getchar(void)
 {
 	char buffer[BUFFERSIZE];

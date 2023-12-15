@@ -1,10 +1,12 @@
 #include "shell.h"
 
 /**
- *  call_exit – this function exits shell
- *  @args: it passes in char pointer
- *  Return: Int
+ * call_exit - Exit the shell.
+ * @args: Char pointer representing the command arguments.
+ *
+ * Return: Integer.
  */
+
 void call_exit(char **args)
 {
 	free(*args);
@@ -12,10 +14,12 @@ void call_exit(char **args)
 	exit(EXIT_SUCCESS);
 }
 /**
- *  call_exit_status – this function exits with a status
- *  @args: A double pointer
- *  Return: void
+ * call_exit_status - Exit the program with a specified status.
+ * @args: A double pointer representing the command arguments.
+ *
+ * Return: void
  */
+
 int call_exit_status(char **args)
 {
 	int sim;
@@ -33,10 +37,12 @@ int call_exit_status(char **args)
 	}
 }
 /**
- *  call_cd – this function will change directory
- *  @args: it passes in char pointer
- *  Return: Int
+ * call_cd - Change the current working directory.
+ * @args: Char pointer representing the command arguments.
+ *
+ * Return: Integer.
  */
+
 int call_cd(char **args)
 {
 	char *target_dir = NULL, *home = NULL;

@@ -1,14 +1,12 @@
 #include "shell.h"
 
 /**
- * shell_filter – this function filters built-ins
- * & sends them to appropriate function
+ * shell_filter - Filters built-in commands and
+ * sends them to the appropriate function.
+ * @commands: Double pointer representing the command line.
+ * @env: Environment variables.
  *
- * @commands: Double pointer from command line
- *
- * @env: Environment variable
- *
- * Return: exec_cmd function
+ * Return: Return value of the exec_cmd function.
  */
 
 int shell_filter(char **commands, char **env)
@@ -51,13 +49,11 @@ int shell_filter(char **commands, char **env)
 	return (opt);
 }
 
-
 /**
- *  ctrl_c_handler - Handles control C
+ * ctrl_c_handler - Handles the interrupt signal (Ctrl+C).
+ * @sig_num: Integer representing the signal number.
  *
- * @sig_num: Integer
- *
- * Return: void
+ * Return: void.
  */
 
 void ctrl_c_handler(int sig_num __attribute__((unused)))
@@ -67,12 +63,13 @@ void ctrl_c_handler(int sig_num __attribute__((unused)))
 }
 
 /**
- * shell_line – this function uses strtok to put args in array
+ * shell_line - Uses strtok to split a line into arguments
+ * and stores them in an array.
+ * @line: Char pointer representing the input line.
  *
- * @line: char pointer
- *
- * Return: Double char pointer
+ * Return: Double char pointer containing the arguments.
  */
+
 
 char **shell_line(char *line)
 {
@@ -115,9 +112,9 @@ char **shell_line(char *line)
 }
 
 /**
- * read_shell – this function reads args with getline
+ * read_shell - Reads arguments using getline.
  *
- * Return: void
+ * Return: void.
  */
 
 char *read_shell(void)
