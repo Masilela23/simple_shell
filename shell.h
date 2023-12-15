@@ -20,6 +20,27 @@ extern char **envi;
 #include <ctype.h>
 #include <stdbool.h>
 
+/**
+ *info - contains pseudo-arguements to pass into a function,
+ *		allowing uniform prototype for function pointer struct
+ *@arg: a string generated from getline containing arguements
+ *@argv: an array of strings generated from arg
+ *@path: a string path for the current command
+ *@argc: the argument count
+ *@line_count: the error count
+ *@err_num: the error code for exit()s
+ *@linecount_flag: if on count this line of input
+ *@fname: the program filename
+ *@env: linked list local copy of environ
+ *@environ: custom modified copy of environ from LL env
+ *@history: the history node
+ *@alias: the alias node
+ *@env_changed: on if environ was changed
+ *@status: the return status of the last exec'd command
+  *@readfd: the fd from which to read line input
+ *@histcount: the history line number count
+ */
+
 
 /**
  * struct list_s - singly linked list
@@ -67,5 +88,6 @@ void ctrl_c_handler(int sig_num);
 char **parse_line(char *line);
 int function_filter(char **commands, char **env);
 int WhoAmI(void);
+
 
 #endif
